@@ -12,74 +12,86 @@
     <link rel="stylesheet" type="text/css" href="./css/index.css">
   </head>
   <body>
-    <nav class="navbar is-white topNav">
-      <div class="container">
-        <div class="navbar-brand">
-          <h1>Activity Planner</h1>
-        </div>
-      </div>
-    </nav>
-    <nav class="navbar is-white">
-      <div class="container">
-        <div class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item is-active" href="#">Newest</a>
-            <a class="navbar-item" href="#">In Progress</a>
-            <a class="navbar-item" href="#">Finished</a>
+    <div id="vueGoalApp">
+      <nav class="navbar is-white topNav">
+        <div class="container">
+          <div class="navbar-brand">
+            <h1>Activity Planner</h1>
           </div>
         </div>
-      </div>
-    </nav>
-    <section class="container">
-      <div class="columns">
-        <div class="column is-3">
-          <a class="button is-primary is-block is-alt is-large" href="#">New Activity</a>
-        </div>
-        <div class="column is-9">
-          <div class="box content">
-            <article class="post">
-              <h4>Reading Harry Potter</h4>
-              <div class="media">
-                <div class="media-left">
-                  <p class="image is-32x32">
-                    <img src="./images/user.png">
-                  </p>
-                </div>
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <a href="#">Filip Jerga</a> updated 34 minutes ago &nbsp;
-                    </p>
-                  </div>
-                </div>
-                <div class="media-right">
-                  <span>Progress Bar Here</span>
-                </div>
-              </div>
-            </article>
-            <article class="post">
-              <h4>Learn Vue.js</h4>
-              <div class="media">
-                <div class="media-left">
-                  <p class="image is-32x32">
-                    <img src="./images/user.png">
-                  </p>
-                </div>
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <a href="#">Filip Jerga</a> updated 40 minutes ago &nbsp;
-                    </p>
-                  </div>
-                </div>
-                <div class="media-right">
-                  <span>Progress Bar Here</span>
-                </div>
-              </div>
-            </article>
+      </nav>
+      <nav class="navbar is-white">
+        <div class="container">
+          <div class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item is-active" href="#">Newest</a>
+              <a class="navbar-item" href="#">In Progress</a>
+              <a class="navbar-item" href="#">Finished</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </nav>
+      <h1>{{message}}</h1>
+      <section class="container">
+        <div class="columns">
+          <div class="column is-3">
+            <a class="button is-primary is-block is-alt is-large" href="#">New Activity</a>
+          </div>
+          <div class="column is-9">
+            <div class="box content">
+              <article class="post">
+                <h4>Reading Harry Potter</h4>
+                <div class="media">
+                  <div class="media-left">
+                    <p class="image is-32x32">
+                      <img src="./images/user.png">
+                    </p>
+                  </div>
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <a href="#">Filip Jerga</a> updated 34 minutes ago &nbsp;
+                      </p>
+                    </div>
+                  </div>
+                  <div class="media-right">
+                    <span>Progress Bar Here</span>
+                  </div>
+                </div>
+              </article>
+              <article class="post">
+                <h4>Learn Vue.js</h4>
+                <div class="media">
+                  <div class="media-left">
+                    <p class="image is-32x32">
+                      <img src="./images/user.png">
+                    </p>
+                  </div>
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <a href="#">Filip Jerga</a> updated 40 minutes ago &nbsp;
+                      </p>
+                    </div>
+                  </div>
+                  <div class="media-right">
+                    <span>Progress Bar Here</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#vueGoalApp',
+        data: {
+          message: 'Hello Vue!'
+        }
+      })
+    </script>
   </body>
 </html>
