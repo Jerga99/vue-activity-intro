@@ -5,6 +5,11 @@ html,body {
 footer {
   background-color: #F2F6FA !important;
 }
+
+.example-wrapper {
+  margin-left: 30px;
+}
+
 .topNav {
   border-top: 5px solid #3498DB;
 }

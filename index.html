@@ -33,14 +33,21 @@
       </nav>
       <section class="container">
 
-        <div v-if="isTextDisplayed">
-          <h1 v-bind:title="titleMessage">{{message}}</h1>
-        </div>
-        <div v-else>
-          Hidden Message
-        </div>
+        <div class="example-wrapper">
+          <div v-if="isTextDisplayed">
+            <h1 v-bind:title="titleMessage">{{message}}</h1>
+          </div>
+          <div v-else>
+            Hidden Message
+          </div>
 
-        <button v-on:click="isTextDisplayed = !isTextDisplayed">Hide Message</button>
+          <div v-for="item in items">
+            {{item.name}}
+          </div>
+
+          <button @click="toggleTextDisplay">Hide Message</button>
+
+        </div>
 
         <div class="columns">
           <div class="column is-3">
@@ -101,6 +108,7 @@
           message: 'Hello Vue!',
           titleMessage: 'Title Message Vue!!!!!',
           isTextDisplayed: true,
+          items: {1: {name: 'Filip'}, 2: {name: 'John'}},
           user: {
             name: 'Filip Jerga',
             id: '-Aj34jknvncx98812',
@@ -129,8 +137,8 @@
           }
         },
         methods: {
-          yell: function () {
-            alert('AAAAAAAAAAAAA!!!!!!')
+          toggleTextDisplay () {
+            this.isTextDisplayed = !this.isTextDisplayed
           }
         }
       })
