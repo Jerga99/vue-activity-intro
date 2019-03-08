@@ -34,7 +34,7 @@
       <section class="container">
         <div class="columns">
           <div class="column is-3">
-            <a @click="isFormDisplayed = !isFormDisplayed" class="button is-primary is-block is-alt is-large" href="#">New Activity</a>
+            <a v-if="!isFormDisplayed" @click="toggleFormDisplay" class="button is-primary is-block is-alt is-large" href="#">New Activity</a>
             <div v-if="isFormDisplayed" class="create-form">
               <h2>Create Activity</h2>
               <form>
@@ -44,9 +44,18 @@
                     <input v-model="newActivity.title" class="input" type="text" placeholder="Read a Book">
                   </div>
                 </div>
+                <div class="field">
+                  <label class="label">Notes</label>
+                  <div class="control">
+                    <textarea v-model="newActivity.notes" class="textarea" placeholder="Write some notes here"></textarea>
+                  </div>
+                </div>
                 <div class="field is-grouped">
                   <div class="control">
-                    <button class="button is-link">Create Activity</button>
+                    <button @click="createActivity" class="button is-link">Create Activity</button>
+                  </div>
+                  <div class="control">
+                    <button @click="toggleFormDisplay" class="button is-text">Cancel</button>
                   </div>
                 </div>
               </form>
@@ -73,7 +82,8 @@
           titleMessage: 'Title Message Vue!!!!!',
           isTextDisplayed: true,
           newActivity: {
-            title: ''
+            title: '',
+            notes: ''
           },
           items: {1: {name: 'Filip'}, 2: {name: 'John'}},
           user: {
@@ -108,9 +118,41 @@
         methods: {
           toggleTextDisplay () {
             this.isTextDisplayed = !this.isTextDisplayed
+          },
+          toggleFormDisplay () {
+            this.isFormDisplayed = !this.isFormDisplayed
+          },
+          createActivity () {
+            console.log(this.newActivity)
           }
         }
       })
     </script>
   </body>
 </html>
+
+<!-- Assigment #1 -->
+<!-- Iterate over goals in article element -->
+<!-- Display goal.title in <h4> and goal.updatedAt in <a>  -->
+<!-- Good Luck and Have fun (: -->
+
+<!-- Assigment #2 -->
+  <!-- Hide "New Activity" button when button is clicked
+       Create new button on bottom of the form to hide form and display only "New Activity"
+       Create textarea input to the form so user can write "notes" and bind newActivity.notes to this textarea
+  -->
+
+  <!--
+  <div class="control">
+    <button class="button is-text">Cancel</button>
+  </div>
+   -->
+
+   <!--
+  <div class="field">
+    <label class="label">Notes</label>
+    <div class="control">
+      <textarea class="textarea" placeholder="Textarea"></textarea>
+    </div>
+  </div>
+    -->
