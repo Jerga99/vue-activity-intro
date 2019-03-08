@@ -54,32 +54,16 @@
           </div>
           <div class="column is-9">
             <div class="box content">
-              <article v-for="activity in activities" class="post">
-                <h4>{{activity.title}}</h4>
-                <div class="media">
-                  <div class="media-left">
-                    <p class="image is-32x32">
-                      <img src="./images/user.png">
-                    </p>
-                  </div>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <a href="#">Filip Jerga</a> updated {{activity.updatedAt}} minutes ago &nbsp;
-                      </p>
-                    </div>
-                  </div>
-                  <div class="media-right">
-                    <span>Progress Bar Here</span>
-                  </div>
-                </div>
-              </article>
+              <activity-item v-for="activity in activities"
+                             :activity="activity"
+                             :key="activity.id"></activity-item>
             </div>
           </div>
         </div>
       </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./components/ActivityItem.js"></script>
     <script>
       var app = new Vue({
         el: '#vueGoalApp',
@@ -98,6 +82,7 @@
           },
           activities: {
             '1546968934': {
+              id: '1546968934',
               title: 'Learn Vue.js',
               notes: 'I started today and it was not good.',
               progress: 0,
@@ -106,6 +91,7 @@
               updatedAt: 1546969144391
             },
             '1546969212': {
+              id: '1546969212',
               title: 'Read Witcher Books',
               notes: 'These books are super nice',
               progress: 0,
