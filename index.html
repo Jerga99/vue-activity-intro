@@ -33,7 +33,7 @@
       </nav>
       <section class="container">
 
-        <div class="example-wrapper">
+        <!-- <div class="example-wrapper">
           <div v-if="isTextDisplayed">
             <h1 v-bind:title="titleMessage">{{message}}</h1>
           </div>
@@ -47,7 +47,7 @@
 
           <button @click="toggleTextDisplay">Hide Message</button>
 
-        </div>
+        </div> -->
 
         <div class="columns">
           <div class="column is-3">
@@ -55,8 +55,8 @@
           </div>
           <div class="column is-9">
             <div class="box content">
-              <article class="post">
-                <h4>Reading Harry Potter</h4>
+              <article v-for="goal in goals" class="post">
+                <h4>{{goal.title}}</h4>
                 <div class="media">
                   <div class="media-left">
                     <p class="image is-32x32">
@@ -66,27 +66,7 @@
                   <div class="media-content">
                     <div class="content">
                       <p>
-                        <a href="#">Filip Jerga</a> updated 34 minutes ago &nbsp;
-                      </p>
-                    </div>
-                  </div>
-                  <div class="media-right">
-                    <span>Progress Bar Here</span>
-                  </div>
-                </div>
-              </article>
-              <article class="post">
-                <h4>Learn Vue.js</h4>
-                <div class="media">
-                  <div class="media-left">
-                    <p class="image is-32x32">
-                      <img src="./images/user.png">
-                    </p>
-                  </div>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <a href="#">Filip Jerga</a> updated 40 minutes ago &nbsp;
+                        <a href="#">Filip Jerga</a> updated {{goal.updatedAt}} minutes ago &nbsp;
                       </p>
                     </div>
                   </div>
